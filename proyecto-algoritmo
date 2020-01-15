@@ -1,0 +1,80 @@
+#include <iostream>
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+#include <windows.h>
+#include <string.h>
+using namespace std;
+ void gotoxy(int x,int y){ 
+HANDLE hcon; 
+hcon = GetStdHandle(STD_OUTPUT_HANDLE); 
+COORD dwPos;
+dwPos.X = x; 
+dwPos.Y= y; 
+SetConsoleCursorPosition(hcon,dwPos); 
+}
+ struct alumno                        
+ { int matricula; char nombre[20]; char carrera[20];                 
+  float promedio; char direccion[20];
+  };
+main(){
+    system("color 60");
+    initwindow(800,750,"ProyectoAlgoritmo",200,250);
+	setviewport(0, 0, 800, 300, 1);
+	setbkcolor(COLOR(890, 350, 255));//color.
+	clearviewport();
+	setcolor(RGB(300, 320, 255));  
+	cleardevice();   
+	readimagefile("Img/photo.jpg",20, 20, 180, 180);
+	setcolor(BLACK);
+	settextstyle(8, 0, 5);//se usa para cambiar la forma en que aparece el texto. Usándolo podemos modificar el tamaño del texto, cambiar la dirección del texto y cambiar la fuente del texto.
+	outtextxy(250, 40, "::App Time Manager::");
+	settextstyle(4, 0, 3);
+	outtextxy(280, 80, "Cargando Datos...");
+	settextstyle(4, 0, 3);
+	outtextxy(250, 110, "No cierres esta ventana,por favor");//muestra el texto o la cadena en un punto específico (x, y) en la pantalla.
+	printf("ESPERE LA CARGA DE LA APLICAION \n");
+	for(int x=240;x < 800;x++){	//setlinestyle(4,7,1);
+    line( 240, 165, x, 165);//dibujar linea.//Sleep(5);//es un retardo en la accion que estes realizando.
+	}
+	int l,y,i,z;
+gotoxy(30,1);
+printf("CARGANDO APLICACION");
+for(i=1; i<90; i++)
+{
+gotoxy(i,2);
+printf("%c",178);
+for(l=50;l<60;l++){
+for(y=1;y<60;y++){
+gotoxy(y,2);
+}
+}
+}
+ char RD;
+ char *p=&RD;
+   p=" TU APP DE CONTROL DE TIEMPO  ;)                      LCDA.LADY SANGACHA    \n";
+   gotoxy(1,3);
+    cout<<"=========================================================================================\n";
+   printf("APP TIME MANAGER\tSOF-1-8 \tALGORITMOS Y LOGICA DE PROGRAMACION \n");
+	printf("%s",p);
+	gotoxy(1,6);
+  cout<<"-----------------------------------------------------------------------------------------\n";
+	int n1,suma=0;
+	gotoxy(18,7);
+	cout<<"Digite el total de aplicaciones a registrar:  ";
+	cin>>n1;
+	if (n1>=5)
+	   cout<<"POR AHORA EL SISTEMA SOLO SOPORTA 4 PLICACIONES, LO SENTIMOS ESTAMOS TRABAJANDO PARA MEJORAR CADA DIA \n ";
+	   else
+	 cout<<"COMIENSA A INGRESAR DATOS ...\n";
+	 
+	system("pause");	
+	return 0;
+}
+
+
+
+	
+	
+
